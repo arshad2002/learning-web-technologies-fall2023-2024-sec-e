@@ -1,0 +1,29 @@
+<workers>
+    <worker>
+        <sl>23</sl>
+        <name>John Carter</name>
+        <admissionDate>
+            <day>25</day>
+            <month>12</month>
+            <year>2015</year>
+        </admissionDate>
+    </worker>
+    <worker>
+        <sl>29</sl>
+        <name>Bob Marshal</name>
+        <admissionDate>
+            <day>13</day>
+            <month>01</month>
+            <year>1999</year>
+        </admissionDate>
+    </worker>
+    <worker>
+        <sl>35</sl>
+        <name>Clark Kent</name>
+        <admissionDate>
+            <day>17</day>
+            <month>06</month>
+            <year>2005</year>
+        </admissionDate>
+    </worker>
+</workers>
