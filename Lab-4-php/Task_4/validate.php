@@ -8,7 +8,6 @@ $confirmPassword = $_REQUEST["confirm_password"] ?? "";
 $gender = $_REQUEST["gender"] ?? "";
 $dob = $_REQUEST["dob"] ?? "";
 
-if ($_SERVER["REQUEST_METHOD"] == "REQUEST") {
     if (empty($name) || empty($email) || empty($username) || empty($password) || empty($confirmPassword) || empty($gender) || empty($dob)) {
         echo "All fields are required.";
     } else {
@@ -20,5 +19,4 @@ if ($_SERVER["REQUEST_METHOD"] == "REQUEST") {
             echo "Form is validated.";
         }
     }
-}
 ?>
