@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Job Posting Form</title>
+</head>
+<body>
+
+<h2>Post a Job</h2>
+
+<form action="../model/jobpostModel.php" method="post">
+  <label >Job Title:</label><br>
+  <input type="text" id="title" name="title" required><br><br>
+
+  <label>Job Description:</label><br>
+  <textarea id="description" name="description" rows="4" cols="50" required></textarea><br><br>
+
+  <label>Job Type:</label><br>
+  <input type="radio" id="hourly" name="job_type" value="hourly" checked>
+  <label>Hourly</label><br>
+  <input type="radio" id="fixed" name="job_type" value="fixed">
+  <label>Fixed</label><br><br>
+
+  <label>Payment Amount:</label><br>
+  <input type="number" id="payment" name="payment" step="0.01" required><br><br>
+
+  <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
