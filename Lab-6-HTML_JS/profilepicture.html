@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Profile Picture</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend>Profile Picture</legend>
+            User Id: <input type="text" id="userIdInput" /> <br>
+            Picture <input type="file" id="pictureInput" /> <br>
+            <hr align="left" width="20%">
+
+        </fieldset>
+        <button onclick="validateProfile()">Submit</button>
+
+        <script>
+            function validateProfile() {
+                let userId = document.getElementById("userIdInput").value.trim();
+                let picture = document.getElementById("pictureInput").value;
+
+                if (userId === "" || isNaN(userId) || parseInt(userId) <= 0) {
+                    alert("User Id cannot be empty and has to be a positive number");
+                    return;
+                }
+
+                if (picture === "") {
+                    alert("Picture cannot be empty");
+                    return;
+                }
+
+                alert("Form submitted successfully");
+            }
+        </script>
+    </body>
+</html>

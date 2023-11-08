@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Of Birth</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend><b>Date Of Birth</b></legend>
+            <input type="date" id="dateInput" /> <br>
+        </fieldset>
+        <button onclick="validateDate()">Submit</button>
+
+        <script>
+            function validateDate() {
+                let date = document.getElementById("dateInput").value;
+                
+                if (date === "") {
+                    alert("Date field cannot be empty");
+                    return;
+                }
+                let dateRegex = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
+                if (!date.match(dateRegex)) {
+                    alert("Please enter a valid date in the format yyyy-mm-dd");
+                    return;
+                }
+                alert("Form submitted successfully");
+            }
+        </script>
+    </body>
+</html>
