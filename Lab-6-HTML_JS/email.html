@@ -10,17 +10,22 @@
 
         <script>
             function validateEmail() {
-                let email = document.getElementById("emailInput").value.trim();
-                let emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                
+                let emailInput = document.getElementById("emailInput");
+                let email = emailInput.value.trim();
+
                 if (email === "") {
                     alert("Email field cannot be empty");
                     return;
                 }
-                if (!email.match(emailRegex)) {
+
+                let atSymbolIndex = email.indexOf("@");
+                let dotSymbolIndex = email.lastIndexOf(".");
+                
+                if (atSymbolIndex === -1 || dotSymbolIndex === -1 || atSymbolIndex > dotSymbolIndex) {
                     alert("Please enter a valid email address (e.g., anything@example.com)");
                     return;
                 }
+
                 alert("Form submitted successfully");
             }
         </script>

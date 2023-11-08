@@ -12,17 +12,20 @@
 
         <script>
             function validateDate() {
-                let date = document.getElementById("dateInput").value;
-                
-                if (date === "") {
-                    alert("Date field cannot be empty");
-                    return;
-                }
-                let dateRegex = /^(19|20)\d{2}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])$/;
-                if (!date.match(dateRegex)) {
+                let dateInput = document.getElementById("dateInput");
+                let date = new Date(dateInput.value);
+
+                if (isNaN(date.getTime())) {
                     alert("Please enter a valid date in the format yyyy-mm-dd");
                     return;
                 }
+
+                let year = date.getFullYear();
+                if (year < 1900 || year > 2099) {
+                    alert("Year should be between 1900 and 2099");
+                    return;
+                }
+
                 alert("Form submitted successfully");
             }
         </script>

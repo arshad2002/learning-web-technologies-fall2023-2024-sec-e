@@ -10,20 +10,29 @@
 
         <script>
             function validateForm() {
-                let name = document.getElementById("nameInput").value.trim();
-                let nameRegex = /^[a-zA-Z][a-zA-Z.\- ]+$/;
+                let nameInput = document.getElementById("nameInput");
+                let name = nameInput.value.trim();
 
                 if (name === "") {
                     alert("Name field cannot be empty");
                     return;
                 }
-                if (name.split(' ').length < 2) {
+
+                let words = name.split(' ');
+                if (words.length < 2) {
                     alert("Name must contain at least two words");
                     return;
                 }
-                if (!name.match(nameRegex)) {
-                    alert("Name must start with a letter and can only contain a-z, A-Z, dot (.), or dash (-)");
-                    return;
+
+                for (let i = 0; i < words.length; i++) {
+                    let word = words[i];
+                    for (let j = 0; j < word.length; j++) {
+                        let charCode = word.charCodeAt(j);
+                        if (!(charCode >= 65 && charCode <= 90) && !(charCode >= 97 && charCode <= 122) && charCode !== 46 && charCode !== 45) {
+                            alert("Name must start with a letter and can only contain a-z, A-Z, dot (.), or dash (-)");
+                            return;
+                        }
+                    }
                 }
 
                 alert("Form submitted successfully");
