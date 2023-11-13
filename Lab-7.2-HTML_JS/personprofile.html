@@ -5,42 +5,37 @@
         </title>
 		<script>
 			function validateForm() {
-				// Validation for Name
+
 				let name = document.forms["myForm"]["name"].value;
 				if (name.trim() === "" || name.split(' ').length < 2) {
 					alert("Please enter a valid name with at least two words.");
 					return false;
 				}
 
-				// Validation for Email
 				let email = document.forms["myForm"]["email"].value;
 				if (email.trim() === "" || email.indexOf('@') === -1 || email.indexOf('.') === -1) {
 					alert("Please enter a valid email address.");
 					return false;
 				}
 
-				// Validation for Gender
 				let gender = document.forms["myForm"]["gender"];
 				if (!gender[0].checked && !gender[1].checked && !gender[2].checked) {
 					alert("Please select a gender.");
 					return false;
 				}
 
-				// Validation for Date of Birth
 				let dob = document.forms["myForm"]["dob"].value;
 				if (dob.trim() === "") {
 					alert("Please enter a valid date of birth.");
 					return false;
 				}
 
-				// Validation for Blood Group
 				let bloodGroup = document.forms["myForm"]["bloodgroup"].value;
 				if (bloodGroup === "") {
 					alert("Please select a blood group.");
 					return false;
 				}
 
-				// Validation for Degree
 				let ssc = document.forms["myForm"]["ssc"].checked;
 				let hsc = document.forms["myForm"]["hsc"].checked;
 				let bsc = document.forms["myForm"]["bsc"].checked;
@@ -49,8 +44,6 @@
 					alert("Please select at least one degree.");
 					return false;
 				}
-
-				// Validation for Photo
 				let photo = document.forms["myForm"]["photo"].value;
 				if (photo.trim() === "") {
 					alert("Please select a photo.");
