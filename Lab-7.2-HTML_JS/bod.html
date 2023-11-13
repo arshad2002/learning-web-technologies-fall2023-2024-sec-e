@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Date Of Birth</title>
+    </head>
+    <body>
+        <fieldset>
+            <legend><b>Date Of Birth</b></legend>
+            <input type="date" id="dateInput" /> <br>
+        </fieldset>
+        <button onclick="validateDate()">Submit</button>
+
+        <script>
+            function validateDate() {
+                let dateInput = document.getElementById("dateInput");
+                let date = new Date(dateInput.value);
+
+                if (isNaN(date.getTime())) {
+                    alert("Please enter a valid date in the format yyyy-mm-dd");
+                    return;
+                }
+
+                let year = date.getFullYear();
+                if (year < 1900 || year > 2099) {
+                    alert("Year should be between 1900 and 2099");
+                    return;
+                }
+
+                alert("Form submitted successfully");
+            }
+        </script>
+    </body>
+</html>

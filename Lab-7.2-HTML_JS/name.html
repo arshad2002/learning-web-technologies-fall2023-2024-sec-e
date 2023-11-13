@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Name</title>
+    </head>
+    <body>
+        Name <br>
+        <input type="text" id="nameInput" value=""> <br>
+        <button onclick="validateForm()">Submit</button>
+
+        <script>
+            function validateForm() {
+                let nameInput = document.getElementById("nameInput");
+                let name = nameInput.value.trim();
+
+                if (name === "") {
+                    alert("Name field cannot be empty");
+                    return;
+                }
+
+                let words = name.split(' ');
+                if (words.length < 2) {
+                    alert("Name must contain at least two words");
+                    return;
+                }
+
+                for (let i = 0; i < words.length; i++) {
+                    let word = words[i];
+                    for (let j = 0; j < word.length; j++) {
+                        let charCode = word.charCodeAt(j);
+                        if (!(charCode >= 65 && charCode <= 90) && !(charCode >= 97 && charCode <= 122) && charCode !== 46 && charCode !== 45) {
+                            alert("Name must start with a letter and can only contain a-z, A-Z, dot (.), or dash (-)");
+                            return;
+                        }
+                    }
+                }
+
+                alert("Form submitted successfully");
+            }
+        </script>
+    </body>
+</html>

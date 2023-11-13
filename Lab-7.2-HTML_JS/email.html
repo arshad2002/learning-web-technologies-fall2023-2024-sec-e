@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Email</title>
+    </head>
+    <body>
+        Email <br>
+        <input type="text" id="emailInput" value=""> <br>
+        <button onclick="validateEmail()">Submit</button>
+
+        <script>
+            function validateEmail() {
+                let emailInput = document.getElementById("emailInput");
+                let email = emailInput.value.trim();
+
+                if (email === "") {
+                    alert("Email field cannot be empty");
+                    return;
+                }
+
+                let atSymbolIndex = email.indexOf("@");
+                let dotSymbolIndex = email.lastIndexOf(".");
+                
+                if (atSymbolIndex === -1 || dotSymbolIndex === -1 || atSymbolIndex > dotSymbolIndex) {
+                    alert("Please enter a valid email address (e.g., anything@example.com)");
+                    return;
+                }
+
+                alert("Form submitted successfully");
+            }
+        </script>
+    </body>
+</html>
