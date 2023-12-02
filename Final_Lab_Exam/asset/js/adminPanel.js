@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 
     window.searchEmployer = function () {
-        var searchInput = document.getElementById('searchInput').value;
+        let searchInput = document.getElementById('searchInput').value;
         fetch('../controller/adminController.php', {
             method: 'POST',
             headers: {
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     };
 
-    var registerForm = document.getElementById('registerForm');
+    let registerForm = document.getElementById('registerForm');
     if (registerForm) {
         registerForm.addEventListener('submit', function (event) {
 
@@ -25,8 +25,9 @@ document.addEventListener('DOMContentLoaded', function () {
             searchEmployer();
         });
     }
+
     window.deleteEmployer = function (empId) {
-        var confirmDelete = confirm('Are you sure you want to delete this employer?');
+        let confirmDelete = confirm('Are you sure you want to delete this employer?');
         if (confirmDelete) {
             fetch('../controller/adminController.php', {
                 method: 'POST',
@@ -51,14 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-
     function updateEmployerTable(data) {
-        var tableBody = document.getElementById('employerTableBody');
+        let tableBody = document.getElementById('employerTableBody');
         tableBody.innerHTML = '';
 
         if (data && data.success && data.data && data.data.length > 0) {
             data.data.forEach(function (employer) {
-                var row = '<tr>' +
+                let row = '<tr>' +
                     '<td>' + employer.emp_name + '</td>' +
                     '<td>' + employer.contact_no + '</td>' +
                     '<td>' + employer.user_name + '</td>' +
@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 tableBody.innerHTML += row;
             });
         } else {
-            var message = '<tr><td colspan="4">No results found</td></tr>';
+            let message = '<tr><td colspan="4">No results found</td></tr>';
             tableBody.innerHTML = message;
         }
     }
