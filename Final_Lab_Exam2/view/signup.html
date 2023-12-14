@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+</head>
+
+<body>
+  <table cellspacing="0" align="center">
+    <tr height="10%">
+      <td>
+        <fieldset>
+          <legend>
+            <h2>Sign Up</h2>
+          </legend>
+          <form id="signupForm" action="../controller/checkSignup.php" method="post">
+            <label for="username">username:</label><br>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required><br><br>
+
+            <label for="password">Password:</label><br>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="repassword">ReTypePassword:</label><br>
+            <input type="password" id="repassword" name="repassword" required><br><br>
+
+            <label for="user_type">User Type:</label><br>
+            <select id="user_type" name="user_type" required>
+              <option value="buyer">buyer</option>
+              <option value="seller">seller</option>
+            </select><br><br>
+
+            <input type="submit" value="Sign Up">
+            <a href="login.html">Login</a>
+          </form>
+          <div id="errorMessage" style="color: red;"></div>
+        </fieldset>
+        
+        
+      </td>
+    </tr>
+  </table>
+  <script src="../asset/js/singnup.js"></script>
+</body>
+
+</html>
